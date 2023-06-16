@@ -36,7 +36,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text(text = "What will we use?")
+            Text(text = com.example.notesmvvm.utils.Constants.Keys.WWWU )
             Button(
                 onClick ={
                     nViewModel.initDatabase(TYPE_ROOM) {
@@ -47,7 +47,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                     .width(200.dp)
                     .padding(vertical = 8.dp)
             ) {
-                Text(text = "Room database")
+                Text(text = com.example.notesmvvm.utils.Constants.Keys.ROOB_DATA)
             }
             Button(
                 onClick ={
@@ -59,7 +59,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                     .width(200.dp)
                     .padding(vertical = 8.dp)
             ) {
-                Text(text = "Firebase database")
+                Text(text = com.example.notesmvvm.utils.Constants.Keys.FIRE_DATA)
             }
         }
     }

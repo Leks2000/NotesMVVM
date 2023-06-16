@@ -39,7 +39,7 @@ fun AddScreen(navController: NavHostController, viewModel: MainViewModel) {
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Add new note",
+                text = com.example.notesmvvm.utils.Constants.Keys.ADD_NEW_NOTE,
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(vertical = 8.dp)
@@ -51,7 +51,7 @@ fun AddScreen(navController: NavHostController, viewModel: MainViewModel) {
                         title = it
                         isButtonEnabled = title.isNotEmpty() && subtitle.isNotEmpty()
                     },
-                label = { Text(text = "Note title") },
+                label = { Text(text = com.example.notesmvvm.utils.Constants.Keys.NOTE_TITLE) },
                 isError = title.isEmpty()
             )
             OutlinedTextField(
@@ -60,7 +60,7 @@ fun AddScreen(navController: NavHostController, viewModel: MainViewModel) {
                         subtitle = it
                         isButtonEnabled = title.isNotEmpty() && subtitle.isNotEmpty()
                     },
-                label = { Text(text = "Note subtitle") },
+                label = { Text(text = com.example.notesmvvm.utils.Constants.Keys.NOTE_SUBTITLE) },
                 isError = subtitle.isEmpty()
             )
             Button(
@@ -72,7 +72,7 @@ fun AddScreen(navController: NavHostController, viewModel: MainViewModel) {
                     }
                 }
             ) {
-                Text(text = "Add note")
+                Text(text = com.example.notesmvvm.utils.Constants.Keys.ADD_NOTE)
             }
         }
     }

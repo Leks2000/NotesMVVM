@@ -125,28 +125,27 @@ fun NoteScreen(navController: NavHostController, viewModel: MainViewModel, noteI
                             title = note.title
                             subtitle = note.subtitle
                             bottomSheetState.show()
+                            }
+                        }) {
+                            Text(text = Constants.Keys.UPDATE)
                         }
-                    }) {
-                        Text(text = Constants.Keys.UPDATE)
-                    }
                     Button(onClick = {
                         viewModel.deleteNote(note = note) {
-                            navController.navigate(NavRoute.Main.route)
-                        }
-                    }) {
+                            navController.navigate(NavRoute.Main.route) }
+                        }) {
                         Text(text = Constants.Keys.DELETE)
                     }
-                    Button(
-                        modifier = Modifier
-                            .padding(top = 16.dp)
-                            .padding(horizontal = 32.dp)
-                            .fillMaxWidth(),
-                        onClick = {
-                            navController.navigate(NavRoute.Main.route)
-                        }
-                    ) {
-                        Text(text = Constants.Keys.NAV_BACK)
+                }
+                Button(
+                    modifier = Modifier
+                        .padding(top = 16.dp)
+                        .padding(horizontal = 32.dp)
+                        .fillMaxWidth(),
+                    onClick = {
+                        navController.navigate(NavRoute.Main.route)
                     }
+                ) {
+                    Text(text = Constants.Keys.NAV_BACK)
                 }
             }
         }

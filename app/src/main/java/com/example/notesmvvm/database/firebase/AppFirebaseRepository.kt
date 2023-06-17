@@ -35,7 +35,7 @@ class AppFirebaseRepository() : DatabaseRepository {
     }
 
     override suspend fun update(note: Note, onSuccess: () -> Unit) {
-        val noteId = database.push().key.toString()
+        val noteId = note.firebaseId
         val mapNotes = hashMapOf<String, Any>()
 
         mapNotes[FIREBASE_ID] = noteId
@@ -60,7 +60,7 @@ class AppFirebaseRepository() : DatabaseRepository {
 
     override fun connectToDataBase(onSuccess: () -> Unit, onFail: (String) -> Unit) {
         mAuth.signInWithEmailAndPassword(LOGIN, PASSWORD)
-            .addOnCanceledListener { onSuccess() }
+            .addOnSuccessListener { onSuccess() }
             .addOnFailureListener{
                 mAuth.createUserWithEmailAndPassword(LOGIN, PASSWORD)
                     .addOnSuccessListener { onSuccess() }

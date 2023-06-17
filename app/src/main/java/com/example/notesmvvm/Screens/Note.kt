@@ -38,7 +38,7 @@ fun NoteScreen(navController: NavHostController, viewModel: MainViewModel, noteI
             notes.firstOrNull { it.id == noteId?.toInt() } ?: Note()
         }
         TYPE_FIREBASE -> {
-            notes.firstOrNull() { it.firebaseId == noteId } ?: Note()
+            notes.firstOrNull { it.firebaseId == noteId } ?: Note()
         }
         else -> Note()
     }
@@ -67,20 +67,20 @@ fun NoteScreen(navController: NavHostController, viewModel: MainViewModel, noteI
                     OutlinedTextField(
                         value = title,
                         onValueChange = { title = it },
-                        label = {Text(text = Constants.Keys.TITLE) },
+                        label = { Text(text = Constants.Keys.TITLE) },
                         isError = title.isEmpty()
                     )
                     OutlinedTextField(
                         value = subtitle,
                         onValueChange = { subtitle = it },
-                        label = {Text(text = Constants.Keys.SUBTITLE) },
+                        label = { Text(text = Constants.Keys.SUBTITLE) },
                         isError = subtitle.isEmpty()
                     )
                     Button(
                         modifier = Modifier.padding(top = 16.dp),
                         onClick = {
                             viewModel.updateNote(note =
-                            Note(id = note.id, title = title, subtitle = subtitle,/*firebaseId = note.firebaseId*/)
+                                Note(id = note.id, title = title, subtitle = subtitle, firebaseId = note.firebaseId)
                             ) {
                                 navController.navigate(NavRoute.Main.route)
                             }

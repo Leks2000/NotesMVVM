@@ -94,7 +94,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                 Button(
                     onClick = {
                         viewModel.initDatabase(TYPE_ROOM) {
-                            DB_TYPE.value = FIREBASE_ID
+                            DB_TYPE.value = TYPE_ROOM
                             navController.navigate(route = NavRoute.Main.route)
                         }
 

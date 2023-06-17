@@ -1,14 +1,16 @@
 package com.example.notesmvvm.utils
 
+import androidx.compose.runtime.mutableStateOf
 import com.example.notesmvvm.database.DatabaseRepository
 
-const val TYPE_DATABASE = "type_database"
 const val TYPE_ROOM = "type_room"
 const val TYPE_FIREBASE = "type_firebase"
+const val FIREBASE_ID = "firebase"
 
 lateinit var REPOSITORY: DatabaseRepository
 lateinit var LOGIN: String
 lateinit var PASSWORD: String
+var DB_TYPE = mutableStateOf("")
 
 object Constants {
     object Keys {
@@ -19,12 +21,11 @@ object Constants {
         const val NOTE_SUBTITLE = "note subtitle"
         const val ADD_NOTE = "add note"
         const val TITLE = "title"
-        const val SUBTITLE = "Subtitle"
+        const val SUBTITLE = "subtitle"
         const val WWWU = "What will we use?"
         const val ROOB_DATA =  "Room database"
         const val FIRE_DATA = "Firebase database"
         const val ID = "id"
-        const val NONE = "none"
         const val UPDATE = "UPDATE"
         const val DELETE = "DELETE"
         const val NAV_BACK = "NAV_BACK"

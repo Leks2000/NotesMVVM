@@ -29,6 +29,10 @@ import com.example.notesmvvm.MainViewModelFactory
 import com.example.notesmvvm.model.Note
 import com.example.notesmvvm.navigation.NavRoute
 import com.example.notesmvvm.ui.theme.NotesMVVMTheme
+import com.example.notesmvvm.utils.Constants
+import com.example.notesmvvm.utils.DB_TYPE
+import com.example.notesmvvm.utils.TYPE_FIREBASE
+import com.example.notesmvvm.utils.TYPE_ROOM
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -54,6 +58,11 @@ fun MainScreen(navController: NavHostController, viewModel: MainViewModel) {
 
 @Composable
 fun NoteItem(note: Note, navController: NavHostController) {
+    val noteId = when(DB_TYPE.value) {
+        TYPE_FIREBASE -> note.firebaseId
+        TYPE_ROOM -> note.id
+        else -> Constants.Keys.EMPTY
+    }
     Card(
         modifier = Modifier
             .fillMaxWidth()

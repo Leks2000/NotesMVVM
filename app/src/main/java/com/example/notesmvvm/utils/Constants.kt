@@ -26,6 +26,7 @@ object Constants {
         const val ROOB_DATA =  "Room database"
         const val FIRE_DATA = "Firebase database"
         const val ID = "id"
+        const val NONE = "none"
         const val UPDATE = "UPDATE"
         const val DELETE = "DELETE"
         const val NAV_BACK = "NAV_BACK"

@@ -78,7 +78,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 DB_TYPE.value = Constants.Keys.EMPTY
                 onSuccess()
             }
-            else -> { Log.d("checkData", "signOut ELSE: ${DB_TYPE.value}")}
+            else -> { Log.d("checkData", "signOut: ELSE: ${DB_TYPE.value}")}
         }
     }
 }

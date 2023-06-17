@@ -80,7 +80,7 @@ fun NoteScreen(navController: NavHostController, viewModel: MainViewModel, noteI
                         modifier = Modifier.padding(top = 16.dp),
                         onClick = {
                             viewModel.updateNote(note =
-                            Note(id = note.id, title = title, subtitle = subtitle, firebaseId = note.firebaseId)
+                            Note(id = note.id, title = title, subtitle = subtitle,/*firebaseId = note.firebaseId*/)
                             ) {
                                 navController.navigate(NavRoute.Main.route)
                             }

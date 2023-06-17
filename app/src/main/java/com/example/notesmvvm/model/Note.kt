@@ -15,7 +15,6 @@ data class Note @Ignore constructor(@PrimaryKey(autoGenerate = true)
     @ColumnInfo
     var subtitle: String = "",
     var firebaseId: String = ""
-
 ) {
     constructor() : this(0,"", "","")
 }

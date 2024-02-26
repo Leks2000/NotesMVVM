@@ -1,6 +1,6 @@
 <div align="center">  
   
-Распаковать zip файл, открыть в приложении Android Studio покдлючить телефон через usb и запустить.
+Распаковать zip файл, открыть в приложении Android Studio подключить телефон через usb и запустить. <br>
 Через локальную бд.
   
 ![image](https://github.com/Leks2000/NotesMVVM/assets/107043945/36e4f5e1-23cf-47c0-befc-8113a7586a31)
